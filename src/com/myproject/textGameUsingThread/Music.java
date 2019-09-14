@@ -18,8 +18,9 @@ public class Music extends Thread {
 	public Music(boolean isLoop) {
 		try {
 			this.isLoop = isLoop;
-			// Add anysong to res folder
 			
+			// Add anysong to res folder
+	
 			file = new File(".//res//introMusic.mp3");
 			fis = new FileInputStream(file);
 			bis = new BufferedInputStream(fis);

@@ -36,8 +36,8 @@ public class Town {
 		}
 	public void store() {		
 		System.out.println("\n무기와 갑옷을 살 수 있습니다.\n");
-		System.out.println("1.롱소드 300골드");
-		System.out.println("2.미스릴갑옷 200골드");
+		System.out.println("1.롱소드 : 300골드");
+		System.out.println("2.미스릴갑옷 :200골드");
 		System.out.println("3.뒤로");
 		where = choice.nextLine();
 		switch(where) {
@@ -52,8 +52,8 @@ public class Town {
 		case "2":
 			mithrill = true;
 			player.setGold(player.getGold() - 300);
-			player.setDefence(player.getDefence() + 1);
-			System.out.println("미스릴갑옷 구매. 방어력 +1. 골드 : " + player.getGold());
+			player.setDefence(player.getDefence() + 3);
+			System.out.println("미스릴갑옷 구매. 방어력 +3. 골드 : " + player.getGold());
 			System.out.println("현재 방어력 : " + player.getDefence() + "\n");
 			store();
 			break;
@@ -65,7 +65,7 @@ public class Town {
 		}
 	}
 	public void recovery() {
-		if (player.getHp() < player.getMaxHP()) {
+		if (player.getHp() < player.getMaxHP() ) {
 			player.setHp(player.getHp() + 10);
 			player.setGold(player.getGold() - 50);
 			System.out.println("체력 10 회복. 현재 HP : " + player.getHp() + " 골드 : " + player.getGold());	

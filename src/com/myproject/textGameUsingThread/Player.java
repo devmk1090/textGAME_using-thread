@@ -12,11 +12,10 @@ public class Player {
     private static int gold;
     
     public Player() {
-    	hp = 50;
-    	maxHP = hp;
-    	maxHP = 0;
+    	hp = 80;
+    	maxHP = 80;
     	xp = 0;
-    	damage = 10;
+    	damage = 30;
     	defence = 2;
     	level = 1;
     	numPotions = 3;
