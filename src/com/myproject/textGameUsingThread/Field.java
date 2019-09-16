@@ -16,6 +16,7 @@ public class Field {
 	Scanner sc = new Scanner(System.in);
 	String choice;
 	Random rand = new Random();
+	int potionChance;
 	
 	public Field(Game g) {
 		game = g;
@@ -103,7 +104,7 @@ public class Field {
 	}
 	public void playerAttack() {
 		int playerAttack;
-		playerAttack = rand.nextInt(player.getDamage());
+		playerAttack = rand.nextInt(player.getDamage()) + 10;
 		if(monster.hp > 0) {
 			System.out.println("ㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡ");
 			System.out.println(game.playerID + "의 공격 ! " + playerAttack + " 데미지 !");
@@ -119,7 +120,7 @@ public class Field {
 	}
 	public void monsterAttack() {
 		int monsterAttack;
-		monsterAttack = rand.nextInt(monster.damage);
+		monsterAttack = rand.nextInt(monster.damage) + 10;
 		if(player.getHp() > 0) {
 		System.out.println("ㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡ");	
 		System.out.println(monster.name + "의 공격 ! " + monsterAttack + " 데미지 !");
@@ -161,12 +162,16 @@ public class Field {
 		System.out.println("----------GAME OVER----------");
 	}
 	public void win() {
+		potionChance = rand.nextInt(100);
 		System.out.println("\n----------- " + monster.name + " 처치 -----------\n"); 
 		System.out.println("골드 : " + monster.gold + " 획득 / "+ "경험치 : " + monster.xp + " 획득");
 		player.setGold(player.getGold() + monster.gold);
 		player.setXp(player.getXp() + monster.xp);
 		System.out.println("현재 골드 : " + player.getGold() + " / 현재 경험치 : " + player.getXp() + "\n");
-		
+		if(potionChance > 50) {
+			player.setNumPotions(player.getNumPotions() + 1);
+			System.out.println("포션 1개를 획득했습니다 ! 현재 포션 갯수 : " + player.getNumPotions() );
+		}
 		checkLevel();
 	}
 	public void checkLevel() {

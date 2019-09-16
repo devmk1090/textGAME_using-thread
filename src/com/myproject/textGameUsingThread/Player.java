@@ -20,7 +20,7 @@ public class Player {
     	level = 1;
     	numPotions = 3;
     	skillPoint = 3;
-    	gold = 1000;
+    	gold = 200;
     }
 
 	public int getHp() {

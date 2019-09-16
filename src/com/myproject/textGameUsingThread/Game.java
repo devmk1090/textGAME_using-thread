@@ -34,11 +34,13 @@ public class Game {
 	
 	}
 	public void mainMenu() {
+		System.out.println("ㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡ");
 		System.out.println("레벨 : "+ player.getLevel());
 		System.out.println("체력 : " + player.getHp() + " / " + player.getMaxHP());
 		System.out.println("공격력 : " + player.getDamage() + " / " + "방어력 : " + player.getDefence());
 		System.out.println("포션 : " + player.getNumPotions() + " 개" + " / " + "스킬포인트 : " + player.getSkillPoint());
-		System.out.println("경험치 : " + player.getXp());	
+		System.out.println("경험치 : " + player.getXp());
+		System.out.println("ㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡ");
 		System.out.println("\n무엇을 하시겠습니까 ?\n");
 		System.out.println("1.탐험하기");
 		System.out.println("2.마을가기");
