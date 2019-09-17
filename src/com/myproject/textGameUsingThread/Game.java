@@ -14,7 +14,7 @@ public class Game {
 	Town town = new Town(this);
 	Field field = new Field(this);
 	Status status = new Status(this);
-	static Player player = new Player();
+	Player player = new Player();
 	
 	public Game() {
 	}

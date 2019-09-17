@@ -3,7 +3,7 @@ package com.myproject.textGameUsingThread2;
 public class Slime extends Monster {
 
 	public Slime() {
-		attackMessage = "srrrrrrrrrrrrrrrrrr";
+		attackMessage = "스르르르르르르르르르르르";
 		name = "Slime";
 		hp = 70;
 		damage = 10;

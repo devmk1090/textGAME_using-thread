@@ -6,6 +6,7 @@ import java.util.Scanner;
 import com.myproject.textGameUsingThread2.Monster;
 import com.myproject.textGameUsingThread2.Orc;
 import com.myproject.textGameUsingThread2.Slime;
+import com.myproject.textGameUsingThread2.UniqueMonster;
 import com.myproject.textGameUsingThread2.Zombie;
 
 public class Field {
@@ -23,7 +24,7 @@ public class Field {
 	}
 
 	public void start() {
-
+		
 		System.out.println("\n어디로 가시겠습니까?\n");
 		System.out.println("\n1.슬라임 사냥터");
 		System.out.println("\n2.오크 사냥터");
@@ -74,6 +75,8 @@ public class Field {
 		select();
 	}
 	public void zombie() {
+		int i = new java.util.Random().nextInt(100)+1;
+		if(i < 90) {
 		monster = new Zombie();
 		System.out.println("\n좀비 사냥터 입장");
 		System.out.println(monster.name + " : " + monster.attackMessage + "\n");
@@ -85,6 +88,21 @@ public class Field {
 		//player.setHp(player.getHp() - 10);
 		//System.out.println("현재 생명 : " + player.getHp());
 		select();
+		}
+		else {
+			monster = new UniqueMonster();
+			System.out.println("\n\nㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡ");
+			System.out.println("희귀   몬스터   출현!!");
+			System.out.println("ㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡ");
+			
+			System.out.println("\n데쓰 나이트 등장 !");
+			System.out.println(monster.name + " : " + monster.attackMessage + "\n");
+			System.out.println("체력 : " + monster.hp);
+			System.out.println("공격력 : " + monster.damage);
+			System.out.println("방어력 : " + monster.defence);
+			System.out.println("처치시 획득 골드 : 500 " );
+			select();
+		}
 	}
 	public void select() {
 		System.out.println("\n1.공격   2.힐링포션   3.도망가기");
@@ -96,7 +114,7 @@ public class Field {
 		case "2":
 			healing(); break;
 		case "3":
-			recovery(); break;
+			start(); break;
 		default:
 			System.out.println("다시 입력해주세요");
 			select();
@@ -155,9 +173,7 @@ public class Field {
 		}
 
 	}
-	public void recovery() {
-		start();
-	}
+
 	public void lose() {
 		System.out.println("----------GAME OVER----------");
 	}
