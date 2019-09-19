@@ -43,8 +43,8 @@ public class Field {
 		case "4":
 			game.mainMenu();
 		default:
-			System.out.println("다시 입력해주세요");
 			start();
+			break;
 			}
 	}
 	public void slime() {
@@ -118,6 +118,7 @@ public class Field {
 		default:
 			System.out.println("다시 입력해주세요");
 			select();
+			break;
 		}
 	}
 	public void playerAttack() {

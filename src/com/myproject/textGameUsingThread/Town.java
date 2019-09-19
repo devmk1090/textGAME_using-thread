@@ -31,7 +31,8 @@ public class Town {
 		case "3":
 			 game.mainMenu(); break;
 		default:
-			System.out.println("다시 입력해주세요");
+			start();
+			break;
 			}
 		}
 	public void store() {		
@@ -42,7 +43,7 @@ public class Town {
 		where = choice.nextLine();
 		switch(where) {
 		case "1": 
-			if (longsword == false && player.getGold() > 300) {
+			if (longsword == false && player.getGold() >= 300) {
 			player.setGold(player.getGold() - 300);
 			player.setDamage(player.getDamage() + 3);
 			System.out.println("롱소드 구매. 공격력 +3. 골드 : " + player.getGold());
@@ -56,8 +57,8 @@ public class Town {
 			}
 			break;
 		case "2":
-			if(mithrill == false && player.getGold() > 300) {
-			player.setGold(player.getGold() - 300);
+			if(mithrill == false && player.getGold() >= 200) {
+			player.setGold(player.getGold() - 200);
 			player.setDefence(player.getDefence() + 3);
 			System.out.println("미스릴갑옷 구매. 방어력 +3. 골드 : " + player.getGold());
 			System.out.println("현재 방어력 : " + player.getDefence() + "\n");
@@ -72,15 +73,15 @@ public class Town {
 		case"3":
 			start(); break;	
 		default:
-			System.out.println("다시 입력해주세요");
 			store();
+			break;
 		}
 	}
 	public void recovery() {
 		if (player.getHp() < player.getMaxHP() ) {
-			player.setHp(player.getHp() + 10);
+			player.setHp(player.getHp() + 20);
 			player.setGold(player.getGold() - 50);
-			System.out.println("체력 10 회복. 현재 HP : " + player.getHp() + " 골드 : " + player.getGold());	
+			System.out.println("체력 20 회복. 현재 HP : " + player.getHp() + " 골드 : " + player.getGold());	
 			start();
 		}
 		else {

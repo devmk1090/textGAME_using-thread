@@ -34,8 +34,8 @@ public class Skill{
 		case "4":
 			game.mainMenu(); break;
 		default:
-			System.out.println("다시 입력해주세요");
 			start();
+			break;
 	}
 }
 	public void attackDamage() {
